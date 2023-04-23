@@ -24,8 +24,7 @@ const HeroSection = () => {
             <span className="font-semibold text-teal-600">
               Software Engineer{" "}
             </span>
-            based in Nottingham, UK. Working towards creating software that
-            makes life easier and more meaningful.
+            based in Nottingham, UK. Working towards landing a entry level role in tech.
           </p>
           <Link
             to="projects"
