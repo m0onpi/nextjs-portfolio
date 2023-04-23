@@ -13,4 +13,7 @@ npm install
 npm run dev
 ```
 
+## Important 
+
+This is a beatiful made template by https://github.com/hqasmei
 
