@@ -6,28 +6,21 @@ import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs"
 
 const projects = [
   {
-    name: "Thankful Thoughts",
+    name: "SoundCloud-Bot",
     description:
-      "ThankfulThoughts is a web app that generates an appreciative sentence of something or someone you are thankful for.",
-    image: "/thankfulthoughts.png",
-    github: "https://github.com/hqasmei/thankful-thoughts",
-    link: "https://thankfulthoughts.io/",
+      "Generates a small music video based on a souncloud link.",
+    image: "/dntlogo.png",
+    github: "https://github.com/m0onpi/soundcloud-bot-v2",
+    link: "https://dntmedia-v2.web.app/",
   },
   {
-    name: "PlatoIO",
-    description: "PlatoIO is a to do list app that built using the PERN stack.",
-    image: "/platoio.png",
-    github: "https://github.com/hqasmei/platoio",
-    link: "https://platoio.com/register",
+    name: "Chess-Bot",
+    description: "Automated Youtube channel with a chess niche",
+    image: "/chess.png",
+    github: "https://github.com/m0onpi/chess",
+    link: "https://www.youtube.com/@sigma_chess/shorts",
   },
-  {
-    name: "Kator Family Photos",
-    description:
-      "Kator Family Photos is a photos and video digitization service in the LA area.",
-    image: "/familyphotos.png",
-    github: "https://github.com/hqasmei/katorfamilyphotos",
-    link: "https://katorfamilyphotos.com/",
-  },
+
 ]
 
 const ProjectsSection = () => {
