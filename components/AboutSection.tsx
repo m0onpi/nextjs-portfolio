@@ -48,6 +48,9 @@ const AboutSection = () => {
 
             </p>
             <br />
+            <p>
+              I have built this portfolio following Hosna Qasmei, which has helped me learn more about Nextjs.
+            </p>
 
           </div>
           <div className="text-center md:w-1/2 md:text-left">
