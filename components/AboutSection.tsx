@@ -13,6 +13,11 @@ const skills = [
   { skill: "Git" },
   { skill: "GitHub" },
   { skill: "Jupyter Notebooks" },
+  { skill: "PHP" },
+  { skill: "Magento" },
+  { skill: "GO" },
+  { skill: "Wails" },
+  { skill: "API" },
 ]
 
 const AboutSection = () => {
