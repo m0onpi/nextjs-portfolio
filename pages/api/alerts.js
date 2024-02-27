@@ -1,7 +1,5 @@
 // pages/api/alerts.js
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from '../../lib/prisma'; // Adjust the import path according to where your prisma instance is initialized
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
