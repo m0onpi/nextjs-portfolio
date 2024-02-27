@@ -14,7 +14,7 @@ const AlertsDisplay = () => {
       .catch((error) => {
         console.error('Error fetching alerts:', error);
       });
-  }, []); // Empty dependency array means this effect runs once on mount
+  }); // Empty dependency array means this effect runs once on mount
 
   return (
     <div>
