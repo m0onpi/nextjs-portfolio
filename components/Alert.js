@@ -6,7 +6,7 @@ const AlertsDisplay = () => {
 
   useEffect(() => {
     // Fetch alerts from your API
-    fetch('/api/getAlerts')
+    fetch('/api/alerts')
       .then((response) => response.json())
       .then((data) => {
         setAlerts(data);
