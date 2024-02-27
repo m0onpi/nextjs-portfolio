@@ -7,6 +7,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     // Extract the message from the request body
     const { message } = req.body;
+    console.log(message)
 
     try {
       // Save the alert to the database
