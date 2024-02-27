@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const alerts = await prisma.Alert.findMany({
+      const alerts = await prisma.alert.findMany({
         orderBy: {
           date: 'desc',
         },
