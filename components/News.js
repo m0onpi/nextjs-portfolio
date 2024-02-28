@@ -7,6 +7,7 @@ export default function Subscribe() {
   const currentTheme = theme === "system" ? systemTheme : theme
   // 1. Create a reference to the input so we can fetch/clear it's value.
   const inputEl = useRef(null);
+  const inputNm = useRef(null)
   // 2. Hold a message in state to handle the response from our API.
   const [message, setMessage] = useState('');
 
@@ -17,6 +18,7 @@ export default function Subscribe() {
     const res = await fetch('/api/subscribe', {
       body: JSON.stringify({
         email: inputEl.current.value,
+        name: inputNm.current.value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -35,6 +37,7 @@ export default function Subscribe() {
 
     // 5. Clear the input value and show a success message.
     inputEl.current.value = '';
+    inputNm.current.value = '';
     setMessage('Success! 🎉 You are now subscribed to the newsletter.');
   };
 
@@ -42,6 +45,15 @@ export default function Subscribe() {
     <h1 className="my-10 text-center font-bold text-4xl">
 
     <form onSubmit={subscribe}>
+    <label htmlFor="name-input"></label>
+      <input className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
+        id="name-input"
+        name="name"
+        placeholder="Human"
+        ref={inputNm}
+        required
+        type="string"
+      />
       <label htmlFor="email-input"></label>
       <input className="bg-gray-200 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold"
         id="email-input"
@@ -51,6 +63,7 @@ export default function Subscribe() {
         required
         type="email"
       />
+      
       <div>
       <br></br>
 
