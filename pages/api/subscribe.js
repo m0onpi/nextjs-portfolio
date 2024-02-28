@@ -19,9 +19,11 @@ export default async (req, res) => {
 
   try {
     await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
-      first_name: name,
       email_address: email,
       status: 'subscribed',
+      merge_fields: {
+        FNAME: name,
+      },
     });
 
     return res.status(201).json({ error: '' });
