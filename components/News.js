@@ -72,7 +72,7 @@ export default function Subscribe() {
           : `I'll only send emails when new content is posted.`}
       </div>
       <br></br>
-      <button className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700" typ="submit">{'✨ Subscribe 💌'}</button>
+      <button className="text-neutral-100 font-semibold px-6 py-3 bg-teal-600 rounded shadow hover:bg-teal-700" type="submit">{'✨ Subscribe 💌'}</button>
     </form>
     </h1>
 

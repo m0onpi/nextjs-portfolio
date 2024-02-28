@@ -6,16 +6,12 @@ mailchimp.setConfig({
 });
 
 export default async (req, res) => {
-  const { email } = req.body;
-  const { name } = req.body;
+  const { email, name } = req.body;
 
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' });
+  if (!email || !name) {
+    return res.status(400).json({ error: 'Email and name is required' });
   }
 
-  if (!name) {
-    return res.status(400).json({ error: 'Name is required' });
-  }
 
   try {
     await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
@@ -28,6 +24,21 @@ export default async (req, res) => {
 
     return res.status(201).json({ error: '' });
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() });
+  // Check if the error is because the member already exists
+  if (error.response && error.response.body) {
+    const responseBody = error.response.body
+    
+    if (responseBody.title === "Member Exists") {
+      return res.status(400).json({ error: "This email is already subscribed to the list." });
+    } else if (responseBody.title === "Invalid Resource") {
+      // Handle other specific errors, e.g., validation errors
+      return res.status(400).json({ error: responseBody.detail });
+    }
+    // Handle all other API errors
+    return res.status(500).json({ error: responseBody.detail || "An error occurred" });
   }
+
+  // Fallback error handling for non-API errors
+  return res.status(500).json({ error: error.message || "An unexpected error occurred" });
+}
 };
