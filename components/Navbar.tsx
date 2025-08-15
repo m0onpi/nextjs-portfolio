@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link to="home">
             </Link>
             <div className="container flex items-center space-x-2">
-                <h2 className="text-2xl font-bold">Michael Pigott</h2>
+                <h2 className="text-2xl font-bold">Trade Smart Finance</h2>
               </div>
             <div className="md:hidden">
               <button
